@@ -34,9 +34,12 @@
             this.createDir = new System.Windows.Forms.ToolStripButton();
             this.delete = new System.Windows.Forms.ToolStripButton();
             this.rename = new System.Windows.Forms.ToolStripButton();
+            this.fileCreate = new System.Windows.Forms.ToolStripButton();
             this.path = new System.Windows.Forms.TextBox();
             this.path1 = new System.Windows.Forms.TextBox();
             this.rightTW = new System.Windows.Forms.TreeView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.copy = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,14 +55,18 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createDir,
+            this.fileCreate,
+            this.rename,
             this.delete,
-            this.rename});
+            this.copy});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1725, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(296, 50);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -69,8 +76,8 @@
             this.createDir.Image = ((System.Drawing.Image)(resources.GetObject("createDir.Image")));
             this.createDir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.createDir.Name = "createDir";
-            this.createDir.Size = new System.Drawing.Size(46, 36);
-            this.createDir.Text = "Создать";
+            this.createDir.Size = new System.Drawing.Size(46, 44);
+            this.createDir.Text = "Создать папку";
             this.createDir.Click += new System.EventHandler(this.CreateDir_Click);
             // 
             // delete
@@ -79,7 +86,7 @@
             this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
             this.delete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(46, 36);
+            this.delete.Size = new System.Drawing.Size(46, 44);
             this.delete.Text = "Удалить";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -89,9 +96,19 @@
             this.rename.Image = ((System.Drawing.Image)(resources.GetObject("rename.Image")));
             this.rename.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.rename.Name = "rename";
-            this.rename.Size = new System.Drawing.Size(46, 36);
+            this.rename.Size = new System.Drawing.Size(46, 44);
             this.rename.Text = "Переименовать";
             this.rename.Click += new System.EventHandler(this.rename_Click);
+            // 
+            // fileCreate
+            // 
+            this.fileCreate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.fileCreate.Image = ((System.Drawing.Image)(resources.GetObject("fileCreate.Image")));
+            this.fileCreate.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.fileCreate.Name = "fileCreate";
+            this.fileCreate.Size = new System.Drawing.Size(46, 44);
+            this.fileCreate.Text = "Создать файл";
+            this.fileCreate.Click += new System.EventHandler(this.fileCreate_Click);
             // 
             // path
             // 
@@ -115,6 +132,16 @@
             this.rightTW.TabIndex = 3;
             this.rightTW.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.rightTW_AfterSelect);
             this.rightTW.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.rightTW_NodeMouseDoubleClick);
+            // 
+            // copy
+            // 
+            this.copy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copy.Image = ((System.Drawing.Image)(resources.GetObject("copy.Image")));
+            this.copy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copy.Name = "copy";
+            this.copy.Size = new System.Drawing.Size(46, 44);
+            this.copy.Text = "Скопировать";
+            this.copy.Click += new System.EventHandler(this.copy_Click);
             // 
             // Form1
             // 
@@ -145,6 +172,9 @@
         private System.Windows.Forms.TextBox path;
         private System.Windows.Forms.TextBox path1;
         private System.Windows.Forms.TreeView rightTW;
+        private System.Windows.Forms.ToolStripButton fileCreate;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripButton copy;
     }
 }
 
