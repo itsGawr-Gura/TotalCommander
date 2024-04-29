@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.IO.Compression;
+
 
 namespace TotalCommander
 {
@@ -31,7 +32,7 @@ namespace TotalCommander
             rightContextMenu.Items.Add("Сжать файл в архив", null, RightCompressFile_Click);
             rightTW.ContextMenuStrip = rightContextMenu;
         }
-        
+
         private void ShowFilePropertiesLeft(object sender, EventArgs e)
         {
             string filePath = path.Text;
@@ -56,11 +57,11 @@ namespace TotalCommander
 
                 MessageBox.Show(message, "Информация о файле", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Вы выбрали не файл!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
         private void LeftCompressFile_Click(object sender, EventArgs e)
         {
@@ -82,7 +83,7 @@ namespace TotalCommander
             }
 
             MessageBox.Show("Файл(ы) успешно сжат(ы) в архив!", "Сжатие", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
         }
         private void RightCompressFile_Click(object sender, EventArgs e)
         {
@@ -420,6 +421,28 @@ namespace TotalCommander
                     MessageBox.Show("Папка с таким названием уже существует.");
                 }
             }
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog1 = new ColorDialog();
+            colorDialog1.Color = Color.RoyalBlue;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.BackColor = colorDialog1.Color;
+                toolStrip1.BackColor = colorDialog1.Color;
+            }
+            FontDialog fontDialog1 = new FontDialog();
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.Font = fontDialog1.Font;
+                toolStrip1.Font = fontDialog1.Font;
+                rightContextMenu.Font = fontDialog1.Font;
+                leftContextMenu.Font = fontDialog1.Font;
+                path.Font = fontDialog1.Font;
+                path1.Font = fontDialog1.Font;
+            }
+
         }
     }
 

@@ -56,6 +56,9 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.settings = new System.Windows.Forms.ToolStripButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.leftContextMenu.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.rightContextMenu.SuspendLayout();
@@ -63,6 +66,8 @@
             // 
             // leftTW
             // 
+            this.leftTW.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.leftTW.ContextMenuStrip = this.leftContextMenu;
             this.leftTW.Location = new System.Drawing.Point(12, 226);
             this.leftTW.Name = "leftTW";
@@ -140,10 +145,11 @@
             this.fileCreate,
             this.rename,
             this.delete,
-            this.copy});
+            this.copy,
+            this.settings});
             this.toolStrip1.Location = new System.Drawing.Point(12, 9);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(234, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(342, 42);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -163,7 +169,7 @@
             this.fileCreate.Image = ((System.Drawing.Image)(resources.GetObject("fileCreate.Image")));
             this.fileCreate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.fileCreate.Name = "fileCreate";
-            this.fileCreate.Size = new System.Drawing.Size(46, 36);
+            this.fileCreate.Size = new System.Drawing.Size(46, 44);
             this.fileCreate.Text = "Создать файл";
             this.fileCreate.Click += new System.EventHandler(this.fileCreate_Click);
             // 
@@ -173,7 +179,7 @@
             this.rename.Image = ((System.Drawing.Image)(resources.GetObject("rename.Image")));
             this.rename.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.rename.Name = "rename";
-            this.rename.Size = new System.Drawing.Size(46, 36);
+            this.rename.Size = new System.Drawing.Size(46, 44);
             this.rename.Text = "Переименовать";
             this.rename.Click += new System.EventHandler(this.rename_Click);
             // 
@@ -183,7 +189,7 @@
             this.delete.Image = ((System.Drawing.Image)(resources.GetObject("delete.Image")));
             this.delete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(46, 36);
+            this.delete.Size = new System.Drawing.Size(46, 44);
             this.delete.Text = "Удалить";
             this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
@@ -193,7 +199,7 @@
             this.copy.Image = ((System.Drawing.Image)(resources.GetObject("copy.Image")));
             this.copy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copy.Name = "copy";
-            this.copy.Size = new System.Drawing.Size(46, 36);
+            this.copy.Size = new System.Drawing.Size(46, 44);
             this.copy.Text = "Скопировать";
             this.copy.Click += new System.EventHandler(this.copy_Click);
             // 
@@ -213,6 +219,8 @@
             // 
             // rightTW
             // 
+            this.rightTW.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.rightTW.ContextMenuStrip = this.rightContextMenu;
             this.rightTW.Location = new System.Drawing.Point(912, 226);
             this.rightTW.Name = "rightTW";
@@ -278,18 +286,30 @@
             this.toolStripMenuItem7.Size = new System.Drawing.Size(264, 38);
             this.toolStripMenuItem7.Text = "Удалить";
             // 
+            // settings
+            // 
+            this.settings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
+            this.settings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(46, 44);
+            this.settings.Text = "Настройки";
+            this.settings.Click += new System.EventHandler(this.settings_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(1725, 1069);
             this.Controls.Add(this.path1);
             this.Controls.Add(this.rightTW);
             this.Controls.Add(this.path);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.leftTW);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Total Chumander";
             this.leftContextMenu.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -327,6 +347,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripButton settings;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 
